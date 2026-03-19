@@ -58,5 +58,14 @@ class MywebappApplicationTests {
         Assertions.assertThat(updatedUser.getLastName()).isEqualTo("Mänd");
     }
 
+    @Test
+    void testDelete() {
+        Integer userId = 6;
+        repo.deleteById(userId);
+
+        Optional<User> optionalUser = repo.findById(userId);
+        Assertions.assertThat(optionalUser).isEmpty();
+    }
+
 }
 
