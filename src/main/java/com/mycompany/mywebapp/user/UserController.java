@@ -44,7 +44,7 @@ public class UserController {
             User user = service.get(id);
             model.addAttribute("user", user);
             model.addAttribute("pageTitle", "Edit User (ID: " + id + ")");
-            return "user_form";
+            return "user-form";
         } catch (Exception ex) {
             ra.addFlashAttribute("message", ex. getMessage());
             ra.addFlashAttribute("messageType", "danger");
